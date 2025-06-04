@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblical Language Analysis Tool</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="header__title">Biblical Language Analysis Tool</h1>
+            <p class="header__subtitle">Comprehensive semantic analysis for Hebrew and Greek biblical texts</p>
+        </header>
+
+        <main class="main">
+            <section class="controls">
+                <div class="controls__group">
+                    <label for="language-select" class="form-label">Language:</label>
+                    <select id="language-select" class="form-control">
+                        <option value="hebrew">Hebrew</option>
+                        <option value="greek">Greek</option>
+                    </select>
+                </div>
+                
+                <div class="controls__group">
+                    <label for="verse-select" class="form-label">Sample Verses:</label>
+                    <select id="verse-select" class="form-control">
+                        <option value="">Select a sample verse...</option>
+                        <option value="genesis_1_1">Genesis 1:1 (Hebrew)</option>
+                        <option value="john_1_1">John 1:1 (Greek)</option>
+                    </select>
+                </div>
+
+                <div class="controls__group">
+                    <label for="custom-input" class="form-label">Or enter custom text:</label>
+                    <textarea id="custom-input" class="form-control" rows="3" placeholder="Enter biblical text in Hebrew or Greek..."></textarea>
+                </div>
+
+                <button id="analyze-btn" class="btn btn--primary">Analyze Text</button>
+            </section>
+
+            <section class="analysis-container" id="analysis-container">
+                <div class="verse-display" id="verse-display">
+                    <!-- Verse analysis will be inserted here -->
+                </div>
+
+                <div class="word-detail" id="word-detail">
+                    <h3>Word Analysis</h3>
+                    <p class="word-detail__placeholder">Click on any word above to see detailed analysis</p>
+                </div>
+
+                <div class="sentence-analysis" id="sentence-analysis">
+                    <h3>Sentence-Level Analysis</h3>
+                    <div class="sentence-analysis__content">
+                        <p>Select a verse to see syntactic and semantic analysis</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="help-section" id="help-section">
+                <h2>Understanding the Analysis</h2>
+                
+                <div class="help-grid">
+                    <div class="help-card">
+                        <h3>Strong's Numbers</h3>
+                        <p>Numerical references (H#### for Hebrew, G#### for Greek) that link to comprehensive lexicons for word studies.</p>
+                    </div>
+                    
+                    <div class="help-card">
+                        <h3>Morphological Parsing</h3>
+                        <p>Detailed grammatical analysis including part of speech, tense, voice, mood, case, gender, and number.</p>
+                    </div>
+                    
+                    <div class="help-card">
+                        <h3>Semantic Range</h3>
+                        <p>The various meanings and nuances a word can have in different contexts throughout Scripture.</p>
+                    </div>
+                    
+                    <div class="help-card">
+                        <h3>Root Words</h3>
+                        <p>The basic form from which the analyzed word is derived, showing etymological connections.</p>
+                    </div>
+                </div>
+
+                <div class="glossary">
+                    <h3>Grammatical Terms</h3>
+                    <div class="glossary-grid">
+                        <div class="glossary-section">
+                            <h4>Hebrew Terms</h4>
+                            <ul id="hebrew-terms"></ul>
+                        </div>
+                        <div class="glossary-section">
+                            <h4>Greek Terms</h4>
+                            <ul id="greek-terms"></ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
